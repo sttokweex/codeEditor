@@ -1,0 +1,162 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: #1e1e1e; 
+    color: #ffffff; 
+}
+
+.app {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden; 
+
+}
+
+.task {
+    flex: 1;
+    min-width: 250px; 
+    background-color: #2d2d2d; 
+}
+
+.task h2 {
+    text-align: center;
+}
+
+.task p {
+    padding-left: 1.25rem; 
+    text-align: left;
+}
+
+.editor {
+    overflow-x: hidden; 
+    border: 1px solid #444; 
+    flex: 3;
+    min-width: 300px; 
+    background-color: #252526; 
+}
+
+.editor-header {
+    display: flex;
+    align-items: center; 
+    margin-top: 0.625rem; 
+    padding-left: 1.875rem; 
+    margin-bottom: 1.25rem; 
+}
+.result-display {
+    display: flex;
+    box-sizing: border-box;
+    margin: 1.875rem; 
+    width: 95.5%;
+    height: 7%;
+  
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3125rem; 
+    font-family: monospace; 
+    white-space: pre-wrap; 
+    overflow-x: auto; 
+    background-color: rgba(211, 211, 211, 0.29); 
+    color: #000000; 
+    border: 1px solid rgba(169, 169, 169, 0.09); 
+}
+
+.result-display.success {
+    background-color: #d4edda; 
+    color: #155724; 
+    border: 1px solid #c3e6cb; 
+}
+
+.result-display.error {
+    background-color: #f8d7da; 
+    color: #721c24; 
+    border: 1px solid #f5c6cb; 
+}
+
+.monaco-editor {
+    margin-left: 1.875rem; 
+    
+}
+
+.monaco-editor::before {
+    content: ""; 
+    position: absolute; 
+    left: 2.8125rem; 
+    top: 0; 
+    bottom: 0; 
+    width: 1px; 
+    background-color: #ffffff; 
+    z-index: 1; 
+}
+
+.run-button {
+    position: absolute;
+    
+    right: 1.875rem; 
+    bottom: 1.25rem; 
+    padding: 0.625rem 1.25rem; 
+    background-color: #007acc; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 0.3125rem; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.run-button:hover {
+    background-color: #005fa3; 
+}
+
+.run-button:active {
+    background-color: #004080; 
+}
+
+.selectLang {
+    padding: 0.525rem 0.5rem;
+    border: 1px solid #ccc; 
+    border-radius: 0.3125rem; 
+    background-color: #ffffff; 
+    color: #333; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+
+@media (max-width: 1100px) {
+    .app {
+        flex-direction: column;
+       height: 130vh;
+    }
+ 
+    .task, .editor {
+        min-width: auto;
+        flex-basis: auto;
+    }
+  
+   
+    .editor-header {
+        flex-direction: row;
+        justify-content: flex-start; 
+        gap:10px
+    }
+ 
+    .run-button {
+        position: static; 
+        margin-top: 0; 
+
+    }
+ }
+ @media (max-width: 768px){
+    .editor{
+        padding-right: 25px;
+    }
+    .result-display{
+        position: absolute;
+        width: calc(95.5% - 25px);
+       
+       }
+ }
