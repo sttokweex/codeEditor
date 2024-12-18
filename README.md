@@ -1,50 +1,45 @@
-# React + TypeScript + Vite
+# Описание проекта
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Данный проект представляет собой упрощённый онлайн редактор кода, аналогичный [leetcode.com](http://leetcode.com). Пользователи могут писать код на двух языках программирования (Go и Python), отправлять его на сервер для выполнения и получать результаты.
 
-Currently, two official plugins are available:
+## Функциональность
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Редактор кода**: Используется библиотека Monaco Editor с подсветкой синтаксиса для выбранного языка.
+- **Выбор языка**: Пользователь может выбрать язык программирования из выпадающего списка.
+- **Запуск кода**: Код отправляется на сервер при нажатии кнопки "Run", и результаты выполнения отображаются под редактором.
+- **Отображение результатов**: Успехи и ошибки выполнения кода отображаются в текстовом блоке.
 
-## Expanding the ESLint configuration
+## Установка и запуск
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Для запуска приложения выполните следующие шаги:
 
-- Configure the top-level `parserOptions` property like this:
+1. Клонируйте репозиторий:
+    ```
+    git clone https://github.com/sttokweex/codeEditor
+    ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. Установите зависимости:
+    ```
+   npm install
+    ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. Запустите приложение:
+    ```
+   npm run dev
+    ```
+   Приложение запустится на [http://localhost:5173](http://localhost:5173).
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Ограничения функционала
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Поддерживаются только два языка программирования: Go и Python.
+- Отсутствует полноценная обработка ошибок на уровне сервера.
+
+## Возможные расширения приложения
+
+- Добавление поддержки других языков программирования.
+- Реализация полноценной серверной части для выполнения кода.
+- Улучшение интерфейса и пользовательского опыта.
+
+
+
+
