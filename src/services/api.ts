@@ -3,11 +3,15 @@ interface ExecuteCodeResponse {
   output?: string;
   error?: string;
 }
+interface ExecuteCodeParams {
+  language: string;
+  code: string;
+}
 
-export const executeCode = async (
-  language: string,
-  code: string
-): Promise<ExecuteCodeResponse> => {
+export const executeCode = async ({
+  language,
+  code,
+}: ExecuteCodeParams): Promise<ExecuteCodeResponse> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       const lines = code.split("\n").map((line) => line.trim());

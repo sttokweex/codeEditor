@@ -19,7 +19,7 @@ const MainPage: React.FC = () => {
   };
 
   const handleRunCode = async () => {
-    const executionResult = await executeCode(language, code);
+    const executionResult = await executeCode({language, code});
     setResult(executionResult);
   };
 
