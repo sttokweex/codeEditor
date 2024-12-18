@@ -1,5 +1,3 @@
-// /src/widgets/ResultDisplay.tsx
-
 import React from "react";
 
 interface Result {

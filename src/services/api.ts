@@ -1,5 +1,3 @@
-// /src/services/api.ts
-
 interface ExecuteCodeResponse {
   status: string;
   output?: string;

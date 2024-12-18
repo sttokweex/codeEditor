@@ -1,5 +1,3 @@
-// /src/features/codeEditor/CodeEditor.tsx
-
 import React from "react";
 import MonacoEditor from "@monaco-editor/react";
 
