@@ -20,12 +20,12 @@
 
 2. Установите зависимости:
     ```
-   npm run dev
+   npm install
     ```
 
 3. Запустите приложение:
     ```
-    npm start
+   npm run dev
     ```
    Приложение запустится на [http://localhost:5173](http://localhost:5173).
 
